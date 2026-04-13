@@ -42,7 +42,6 @@ export default function Hero() {
     };
   }, []);
 
-  // Professional black & white torch: white center fading to dark gray, then transparent
   const torchGradient = `radial-gradient(circle 300px at ${pointerPos.x} ${pointerPos.y}, 
     rgba(255,255,255,0.9) 0%, 
     rgba(200,200,200,0.4) 40%,
@@ -51,28 +50,28 @@ export default function Hero() {
 
   return (
     <div className="relative w-full">
-      {/* IMAGE - fixed at bottom (YOUR EXACT CODE - UNCHANGED) */}
+      {/* IMAGE - slightly bigger */}
       <div className="overflow-hidden fixed bottom-0 left-1/2 transform -translate-x-1/2
-                      w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[35%]
-                      max-h-[60vh] sm:max-h-[60vh] md:max-h-[60vh]
+                      w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[45%]
+                      max-h-[70vh]
                       z-6 pointer-events-none">
         <div className="relative w-full aspect-square">
           <Image
             src={myImage}
             alt="Hero image"
             fill
-            className="object-contain"
+            className="object-contain mt-5"
             priority
           />
         </div>
       </div>
 
-      {/* TEXT SECTION - professional black texture background + torch effect */}
-      <div className="relative z-5 pt-[10vh] pb-[55vh] bg-black overflow-hidden">
-        {/* Black texture overlay (subtle noise) */}
+      {/* TEXT SECTION */}
+      <div className="relative z-5 pt-[10vh] pb-[60vh] bg-black overflow-hidden">
+        {/* Noise texture */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\' opacity=\'0.08\'/%3E%3C/svg%3E')] opacity-40 mix-blend-overlay"></div>
 
-        {/* Torch spotlight overlay */}
+        {/* Torch */}
         <div
           className="absolute inset-0 pointer-events-none z-10"
           style={{
@@ -81,7 +80,7 @@ export default function Hero() {
           }}
         />
 
-        {/* Text content */}
+        {/* Content */}
         <div className="relative z-0 text-center p-6 text-white">
           <h1 className="flex flex-col md:flex-row md:flex-wrap justify-center items-center md:items-baseline font-black m-0 p-0 leading-none">
             {dinukaLetters.map((letter, idx) => (
@@ -95,9 +94,11 @@ export default function Hero() {
               </span>
             ))}
           </h1>
+
           <h2 className="text-[6vw] sm:text-[8vw] md:text-[6vw] lg:text-[5vw] xl:text-[90px] font-semibold m-0 p-0 leading-tight">
             Software Engineer & Developer
           </h2>
+
           <p className="text-[4vw] sm:text-[4.5vw] md:text-[3vw] lg:text-[2vw] xl:text-3xl m-0 p-0 max-w-4xl mx-auto">
             Crafting innovative solutions through clean code and modern technologies.
             Specializing in full-stack development, cloud architecture, and interactive web experiences.
