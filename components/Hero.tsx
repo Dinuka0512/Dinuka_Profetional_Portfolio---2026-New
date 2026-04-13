@@ -83,12 +83,12 @@ export default function Hero() {
         {/* ========== MOBILE CONTENT (flow layout) ========== */}
         <div className="md:hidden relative z-10 flex flex-col items-center justify-center text-center p-6 text-white">
           {/* Rotated DINUKA letters - now in flow, not absolute */}
-          <div className="transform rotate-90 whitespace-nowrap my-8 mt-45">
+          <div className="transform rotate-90 whitespace-nowrap my-8 mt-65">
             {dinukaLetters.map((letter, idx) => (
               <span
                 key={idx}
-                className="text-[200px] font-black leading-none mx-2"
-                style={{ textShadow: "0 0 10px rgba(255,255,255,0.4)" }}
+                className="text-[350px] font-black leading-none mx-2"
+                style={{ textShadow: "0 0 10px rgba(255,255,255,0.2)" }}
               >
                 {letter}
               </span>
@@ -96,7 +96,7 @@ export default function Hero() {
           </div>
 
           {/* Subtitle & paragraph appear after the rotated text */}
-          <h2 className="text-[6vw] font-semibold leading-tight mt-40">
+          <h2 className="text-[6vw] font-semibold leading-tight mt-60">
             Software Engineer & Developer
           </h2>
           <p className="text-[4vw] max-w-4xl mx-auto mt-2">
